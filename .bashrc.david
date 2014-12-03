@@ -1,0 +1,11 @@
+# Defines various environments variables and aliases
+#
+# To use this file, add the following lines to the ~/.bashrc file
+#
+# if [ -f ~/.bashrc.david ]; then
+#     . ~/.bashrc.david
+# fi
+export PLAY_HOME="/opt/play-2.2.2"
+export MAVEN_PATH="/opt/apache-maven-3.1.0/bin"
+export PATH="$PATH:$MAVEN_PATH:$PLAY_HOME:/home/david/bin"
+export EDITOR=vim
