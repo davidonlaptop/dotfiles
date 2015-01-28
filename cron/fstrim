@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# To find which FS support trim, we check that DISC-MAX (discard max bytes)
+# is great than zero. Check discard_max_bytes documentation at
+# https://www.kernel.org/doc/Documentation/block/queue-sysfs.txt
+#
+
+
+# Detecting SSD disks
+# http://unix.stackexchange.com/questions/65595/how-to-know-if-a-disk-is-an-ssd-or-an-hdd
+for d in `ls /dev/sd?`; do sudo echo -e "$d\t`sudo cat /sys/block/$(basename $d)/queue/rotational`"; done
+
+
+
+FS_SUPPORTING_FSTRIM=$(lsblk -o MOUNTPOINT,DISC-MAX,FSTYPE | grep -E '^/.* [1-9]+.* ' | awk '{print $1}')
+echo -e "`date`\tPartitions with a file system supporting the FSTRIM commmand: $FS_SUPPORTING_FSTRIM"
+
+for fs in $FS_SUPPORTING_FSTRIM do
+	echo -e "`date`\tSending the TRIM command to $fs ..."
+	fstrim "$fs"
+done
+echo -e "`date`\tTRIM completed."
