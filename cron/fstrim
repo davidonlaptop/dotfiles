@@ -1,22 +1,33 @@
 #!/bin/sh
 #
+# 
+
+################################################################################
+# Detecting SSD disks
+################################################################################
+# e.g. /dev/sda is an SSD if cat /sys/block/sda/queue/rotational is 0
+# http://unix.stackexchange.com/questions/65595/how-to-know-if-a-disk-is-an-ssd-or-an-hdd
+#
+echo "`date`   Detecting SSD devices..."
+for device in $(ls /dev/sd?); do
+	if [ $(cat /sys/block/$(basename $device)/queue/rotational) -eq 0 ]; then
+		echo "`date`   SSD found: $device"
+	fi
+done
+
+
+################################################################################
+# TRIMMING SSD partitions
+################################################################################
 # To find which FS support trim, we check that DISC-MAX (discard max bytes)
 # is great than zero. Check discard_max_bytes documentation at
 # https://www.kernel.org/doc/Documentation/block/queue-sysfs.txt
 #
-
-
-# Detecting SSD disks
-# http://unix.stackexchange.com/questions/65595/how-to-know-if-a-disk-is-an-ssd-or-an-hdd
-for d in `ls /dev/sd?`; do sudo echo -e "$d\t`sudo cat /sys/block/$(basename $d)/queue/rotational`"; done
-
-
-
 FS_SUPPORTING_FSTRIM=$(lsblk -o MOUNTPOINT,DISC-MAX,FSTYPE | grep -E '^/.* [1-9]+.* ' | awk '{print $1}')
-echo -e "`date`\tPartitions with a file system supporting the FSTRIM commmand: $FS_SUPPORTING_FSTRIM"
-
-for fs in $FS_SUPPORTING_FSTRIM do
-	echo -e "`date`\tSending the TRIM command to $fs ..."
-	fstrim "$fs"
+echo "`date`   Partitions with a file system supporting the FSTRIM commmand: $FS_SUPPORTING_FSTRIM"
+for fs in $FS_SUPPORTING_FSTRIM
+do
+	echo "`date`   Sending the TRIM command to $fs ..."
+	#fstrim "$fs"
 done
-echo -e "`date`\tTRIM completed."
+echo "`date`   TRIM completed."
