@@ -1,18 +1,21 @@
 # My DotFiles template
-
 Repository for my $HOME directory's config files :-)
-
-I am using [Dotbot][dotbot] to bootstrap the dotfiles on a new machine.
 
 
 ## Installation
-The only requirements is to have `git` and `python` installed.
-```
-cd $HOME
-git clone git@github.com:davidonlaptop/dotfiles.git
-cd dotfiles/
-./install
-```
+After cloning this repo, run `install` to automatically set up the development environment.
+Note that the install script is idempotent: it can safely be run multiple times.
+
+Dotfiles uses [Dotbot][dotbot] to bootstrap installation. 
+
+The only requirement is to have `git` and `python` installed and accesible in the path.
+
+
+### Making Local Customizations
+You can make local customizations for some programs by editing these files:
+
+* `vim` : `~/.vimrc_local`
+* `git` : `~/.gitconfig_local`
 
 
 ## Submodules
