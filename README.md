@@ -47,6 +47,12 @@ If you're using Dotbot and you'd like to include a link to your dotfiles here
 as an inspiration to others, please submit a pull request.
 
 
+## Other resources on dotfiles
+* [Your unofficial guide to dotfiles on GitHub] [github_dotfiles]
+* [Anish Athalye's blog post on managing dotfiles] [anishathalye_blog]
+* [Getting started with Dotfiles] [webprolific]
+* [Awesome list of OS X defaults] [mathias_bynens]
+
 [dotbot]: https://github.com/anishathalye/dotbot
 [fork]: https://github.com/anishathalye/dotfiles_template/fork
 [anishathalye_dotfiles]: https://github.com/anishathalye/dotfiles
@@ -55,3 +61,7 @@ as an inspiration to others, please submit a pull request.
 [alexwh_dotfiles]: https://github.com/alexwh/dotfiles
 [azd325_dotfiles]: https://github.com/Azd325/dotfiles
 [bluekeys_dotfiles]: https://github.com/bluekeys/.dotfiles
+[github_dotfiles]: https://dotfiles.github.io/
+[anishathalye_blog]:  http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
+[webprolific]: https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789
+[mathias_bynens]: https://github.com/mathiasbynens/dotfiles
