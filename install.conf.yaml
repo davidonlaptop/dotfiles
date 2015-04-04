@@ -15,12 +15,11 @@
       create: true
       path:   deluge/
     ~/.dotfiles: ''
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
     ~/.kde/share/config/workspaceoptionsrc:
       create: true
       path:   kde/workspaceoptionsrc
-    ~/.tmux.conf: tmux.conf
-    ~/.vim: vim/
-    ~/.vimrc: vimrc
 
 
 # Initialize submodules as stored in .gitmodules and all their nested submodules within
