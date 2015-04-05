@@ -1,0 +1,11 @@
+
+alias l="ls -la"      # List in long format, include dotfiles
+alias ld="ls -ld */"  # List in long format, only directories
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# List declared aliases, functions
+alias listaliases="alias | sed 's/=.*//'"
+alias listfunctions="declare -f | grep -e '^[a-z].* ()' | sed 's/{$//'" # show non _prefixed functions
+
