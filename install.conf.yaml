@@ -3,11 +3,18 @@
 - clean: ['~']
 
 
+#- shell:
+#  - [mkdir -p bash-it/aliases/enabled bash-it/completion/enabled bash-it/plugins/enabled, Initializing Bash-it directories for enabled aliases, completion and plugins]
+
+
 # Format: <symbolic link> : <source>
 #  - Use 'force: true' to override any existing file
 #  - Use 'create: true' to create parent directory if necessary
 # 
 - link:
+#    bash-it/aliases/enabled/ansible.aliases.bash: bash-it/aliases/available/ansible.aliases.bash
+#    bash-it/aliases/enabled/docker.aliases.bash:  bash-it/aliases/available/docker.aliases.bash
+#    ~/.bash_it: bash-it/
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.bb/final/blogbridge.properties:

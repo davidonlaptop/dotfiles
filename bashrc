@@ -6,6 +6,7 @@
 # anything or bad things will happen !
 
 
+#echo -e "`gdate +"%T.%N"` \t Configuring shell..."
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
@@ -20,11 +21,15 @@ fi
 
 
 # Determine the directory of this script (so we can run the script anywhere)
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SCRIPT_PATH=${BASH_SOURCE[0]}
+if [[ -L $SCRIPT_PATH ]]; then
+  SCRIPT_PATH=$( readlink $SCRIPT_PATH )
+fi
+DOTFILES_DIR=$( dirname $SCRIPT_PATH )
 
 
 # Bootstrap environment
-for DOTFILE in "$DOTFILES_DIR"/system/.{functions,paths,exports,aliases,prompts}
+for DOTFILE in "$DOTFILES_DIR"/system/{functions,paths,exports,aliases,completions,prompts}
 do
     [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
@@ -33,14 +38,15 @@ done
 # Load OS specific configurations
 if [ "$(uname -s)" = "Darwin" ]; then
     OS="OSX"
-    for DOTFILE in "$DOTFILES_DIR"/system/.{functions,paths,exports,aliases,prompts}.osx
+    for DOTFILE in "$DOTFILES_DIR"/system/{functions,paths,exports,aliases,completions,prompts}.osx
     do
         [ -f "$DOTFILE" ] && source "$DOTFILE"
     done
 else
     OS=`uname -s`
 fi
+#echo -e "`gdate +"%T.%N"` \t Shell ready."
 
 
 # Clean up
-unset DOTFILES_DIR DOTFILE OS
+unset SCRIPT_PATH DOTFILES_DIR DOTFILE OS
