@@ -20,9 +20,12 @@
     ~/.bb/final/blogbridge.properties:
       create: true
       path:   blogbridge.properties
-    ~/.config/deluge:
+    ~/.config/deluge/core.conf:
       create: true
-      path:   deluge/
+      path:   deluge/core.conf
+    ~/.config/deluge/gtkui.conf:
+      create: true
+      path:   deluge/gtkui.conf
     ~/.dotfiles: ''
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
