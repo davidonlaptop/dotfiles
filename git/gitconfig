@@ -1,0 +1,87 @@
+# For more info, check git help config or:
+# http://git-scm.com/docs/git-config
+#
+# Inspired by:
+# https://github.com/anishathalye/dotfiles
+
+
+[user]
+	name = David Lauzon
+	email = davidonlaptop@gmail.com
+
+[alias]
+	aa  = add --all :/     # Adds all non-staged files
+	br  = branch -vv
+	bra = branch -vv --all
+	ci  = commit -v
+	co  = checkout
+	count  = diff --stat "4b825dc642cb6eb9a060e54bf8d69288fbee4904" # hash of empty tree
+	credit = shortlog -sn   # List author names sorted by nb of commits
+                                # List author names sorted by nb of lines of code (creditloc)
+	creditloc = ! "lc() { git ls-tree --name-only -z -r HEAD | xargs -0 -n1 git diff --no-index --numstat /dev/null 2>/dev/null | grep -v '^-' | cut -f 3- | cut -d ' ' -f 3- | xargs -n1 git blame --line-porcelain | grep '^author ' | cut -d ' ' -f 2- | sort | uniq -c | sort -nr; }; lc"
+	di   = diff
+	dis  = diff --stat
+	diw  = diff --color-words
+	dic  = diff --color-words=.
+	dc   = diff --cached
+	dcs  = diff --cached --stat
+	dcw  = diff --cached --color-words
+	dcc  = diff --cached --color-words=.
+	dh   = diff HEAD~
+	dhs  = diff HEAD~ --stat
+	dhw  = diff HEAD~ --color-words
+	dhc  = diff HEAD~ --color-words=.
+	gr   = log --graph --format=compact        # graph
+	grl  = log --graph --format=line           # graph line
+	grd  = log --graph --format=detail         # graph detail
+	gra  = log --graph --format=compact --all  # (all) graph
+	gral = log --graph --format=line    --all  # (all) graph line
+	grad = log --graph --format=detail  --all  # (all) graph detail
+	info = ! "inf() { if git rev-parse ${1} >/dev/null 2>&1; then git cat-file -p $(git rev-parse ${1}); else echo Invalid object; fi }; inf"
+	root = rev-parse --show-toplevel  # Top-level dir of git repo
+	st   = status -sb
+#	ctags = ! "ctg() { trap \"rm -f .git/tags.$$\" EXIT; ctags --tag-relative -Rf.git/tags.$$ --exclude=.git; mv .git/tags.$$ .git/tags; }; ctg"
+	# Compress the git repo @ HEAD revision in requested format (without the .git directory)
+	tar   = ! "tar() { git archive --format tar --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; tar"
+	targz = ! "targz() { git archive --format tar.gz --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; targz"
+	zip   = ! "zip() { git archive --format zip --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; zip"
+
+[color]
+	ui = auto  # Autodetect if terminal supports color
+
+#[color "grep"]
+#	match = cyan bold
+#	selected = blue
+#	context = normal
+#	filename = magenta
+#	linenumber = green
+#	separator = yellow
+#	function = blue
+
+[core]
+	excludesfile = ~/.gitignore_global  # User-wide .gitignore
+
+[credential]
+	helper = cache --timeout=1800   # Cache credentials in RAM for 30 minutes
+
+[grep]
+	lineNumber = true    # Enable grep -n
+
+[merge]
+	tool = vimdiff
+
+[mergetool]
+	keepBackup = false   # Discard the .orig file after performing a merge
+
+[pretty]
+	line    = "%C(auto)%h%d %s %C(yellow)by %C(blue)%an %C(green)%ar"
+	compact = "%C(auto)%h %s %C(green)%ar%n %C(auto)%d%n"
+	detail  = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ar%n %C(auto)%d%n"
+
+[push]
+	default = upstream   # Push current branch back to upstream branch
+
+
+[include]
+	# Allow local customizations (see example in gitconfig_local.sample)
+	path = ~/.gitconfig_local
