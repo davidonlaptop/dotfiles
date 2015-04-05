@@ -5,10 +5,6 @@
 # https://github.com/anishathalye/dotfiles
 
 
-[user]
-	name = David Lauzon
-	email = davidonlaptop@gmail.com
-
 [alias]
 	aa  = add --all :/     # Adds all non-staged files
 	br  = branch -vv
