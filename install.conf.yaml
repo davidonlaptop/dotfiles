@@ -8,6 +8,8 @@
 #  - Use 'create: true' to create parent directory if necessary
 # 
 - link:
+    ~/.bash_profile: bash_profile
+    ~/.bashrc: bashrc
     ~/.bb/final/blogbridge.properties:
       create: true
       path:   blogbridge.properties
