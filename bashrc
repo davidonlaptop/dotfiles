@@ -1,4 +1,4 @@
-# ~/.bashrc
+# ~/.bashrc: executed by bash(1) for non-login shells.
 #
 # This file is sourced by all *interactive* bash shells on startup,
 # including some apparently interactive shells such as scp and rcp

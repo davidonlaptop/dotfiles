@@ -3,6 +3,9 @@
 #
 # Current path on OSX before using this script
 # PATH=/Users/david/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
+#
+# Current path on Linux before using this script
+# PATH=/home/david/opt/scala-2.10.4/bin:/home/david/opt/sbt-0.13.6/bin:/usr/lib/x86_64-linux-gnu/qt4/bin:/home/david/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-7-oracle/bin:/usr/lib/jvm/java-7-oracle/db/bin:/usr/lib/jvm/java-7-oracle/jre/bin:/opt/apache-maven-3.2.5/bin:/opt/play-2.2.2:/home/david/bin 
 
 
 # Prepend new items to path (if directory exists)
