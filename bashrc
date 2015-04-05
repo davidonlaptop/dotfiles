@@ -6,7 +6,6 @@
 # anything or bad things will happen !
 
 
-#echo -e "`gdate +"%T.%N"` \t Configuring shell..."
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
@@ -15,7 +14,7 @@ if [[ $- != *i* ]] ; then
         return
 fi
 
-
+#echo -e "`gdate +"%T.%N"` \t Configuring shell..."
 # Load secret config invisible from source control
 [[ -f ~/.bashrc.secrets ]] && . ~/.bashrc.secrets
 
@@ -45,8 +44,13 @@ if [ "$(uname -s)" = "Darwin" ]; then
 else
     OS=`uname -s`
 fi
-#echo -e "`gdate +"%T.%N"` \t Shell ready."
+
+
+#echo -e "`gdate +"%T.%N"` \t Configuring prompt..."
+source "$DOTFILES_DIR/system/liquidpromptrc"
+source "$DOTFILES_DIR/system/liquidprompt/liquidprompt"
 
 
 # Clean up
 unset SCRIPT_PATH DOTFILES_DIR DOTFILE OS
+#echo -e "`gdate +"%T.%N"` \t Shell ready."

@@ -3,6 +3,14 @@
 - clean: ['~']
 
 
+# Initialize submodules as stored in .gitmodules and all their nested submodules within
+# Note: the DotBot submodule is initialized in the install script. The command below will
+#       initialize all the other submodules
+#
+- shell:
+  - [git submodule update --init --recursive, Initializing submodules]
+
+
 #- shell:
 #  - [mkdir -p bash-it/aliases/enabled bash-it/completion/enabled bash-it/plugins/enabled, Initializing Bash-it directories for enabled aliases, completion and plugins]
 
@@ -30,8 +38,3 @@
       create: true
       path:   kde/workspaceoptionsrc
 
-
-# Initialize submodules as stored in .gitmodules and all their nested submodules within
-#
-- shell:
-  - [git submodule update --init --recursive, Initializing submodules]

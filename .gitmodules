@@ -4,3 +4,6 @@
 [submodule "bash-it"]
 	path = bash-it
 	url = https://github.com/Bash-it/bash-it
+[submodule "system/liquidprompt"]
+	path = system/liquidprompt
+	url = https://github.com/nojhan/liquidprompt
