@@ -7,7 +7,7 @@
 extract () {
   if [ -f $1 ]; then
     case $1 in
-      *.bz2) bunzip2 $1 ;;
+      *.bz2) bunzip2 -k $1 ;;
       *.dmg) hdiutil mount $1 ;;
       *.gz) gunzip $1 ;;
       *.pax) cat $1 | pax -r ;;
@@ -28,3 +28,12 @@ extract () {
     echo "'$1' is not a valid file to extract"
   fi
 }
+
+
+# Sets the terminal tab title
+# 
+# SYNOPSIS:  title mytitle
+# http://superuser.com/questions/419775/with-bash-iterm2-how-to-name-tabs
+function title {
+    echo -ne "\033]0;"$*"\007"
+} 
