@@ -57,3 +57,12 @@ export PATH="$PATH:$SCALA_HOME/bin:$PLAY_HOME"
 # Spark
 export SPARK_HOME=$HOME/opt/spark
 export PATH="$PATH:$SPARK_HOME/bin"
+
+
+# Python
+#
+# Fixes: "warning: install_lib: byte-compiling is disabled, skipping."
+#        "error: byte-compiling is disabled."
+# Actually, I am not sure the line below is required.
+# I think the fix is to choose Python 2.7.0 interpretor in PyCharm instead of default 2.6.9
+export PYTHONDONTWRITEBYTECODE=0
