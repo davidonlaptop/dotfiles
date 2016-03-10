@@ -14,8 +14,9 @@ The only other requirement is to have `git` and `python` installed and accesible
 ### Making Local Customizations
 You can make local customizations (_e.g. to exclude sensitive information_) for some programs by editing these files:
 
-- `vim` : `~/.vimrc_local`
+- `bash` : `~/.bashrc.secrets`
 - `git` : `~/.gitconfig_local`
+- `vim` : `~/.vimrc_local`
 
 These files **are NOT** version controlled in this git repository.
 
