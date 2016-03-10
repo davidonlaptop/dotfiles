@@ -1,0 +1,50 @@
+# Remove dead symbolic links in path '~/' that point to the dotfiles directory
+#
+- clean: ['~']
+
+
+# Initialize submodules as stored in .gitmodules and all their nested submodules within
+# Note: the DotBot submodule is initialized in the install script. The command below will
+#       initialize all the other submodules
+#
+- shell:
+  - [git submodule update --init --recursive, Initializing submodules]
+
+
+#- shell:
+#  - [mkdir -p bash-it/aliases/enabled bash-it/completion/enabled bash-it/plugins/enabled, Initializing Bash-it directories for enabled aliases, completion and plugins]
+
+
+# Main Format:        <symbolic link> : <path to source>
+# Alternative format: <symbolic link> : {}   ==> where the keys are:
+#  - 'path'   : <path to source>
+#  - 'force'  : 'true'   to override any existing file
+#  - 'create' : 'true'   to create parent directory if necessary
+# 
+- link:
+    #
+    # POSIX FILES
+    ~/.bash_profile: etc/bash/bash_profile
+    ~/.bashrc: etc/bash/bashrc
+    ~/.bb/final/blogbridge.properties:
+      create: true
+      path:   etc/blogbridge/blogbridge.properties
+    ~/.gitconfig: etc/git/gitconfig
+    ~/.gitignore_global: etc/git/gitignore_global
+    #
+    # LINUX SPECIFIC FILES
+    ~/.config/deluge/core.conf:
+      create: true
+      path:   etc/deluge/core.conf
+    ~/.config/deluge/gtkui.conf:
+      create: true
+      path:   etc/deluge/gtkui.conf
+    ~/.kde/share/config/workspaceoptionsrc:
+      create: true
+      path:   etc/kde/workspaceoptionsrc
+    #
+    # Interesting extensions:
+    #    bash-it/aliases/enabled/ansible.aliases.bash: bash-it/aliases/available/ansible.aliases.bash
+    #    bash-it/aliases/enabled/docker.aliases.bash:  bash-it/aliases/available/docker.aliases.bash
+    #    ~/.bash_it: bash-it/
+
