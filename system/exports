@@ -46,3 +46,14 @@ fi
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+
+# Java / Scala / Play! (WARNING: untested on Linux)
+#export JAVA_HOME=$(/usr/libexec/java_home)  # Read JAVA_HOME from OSX system
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home"
+export SCALA_HOME=$HOME/opt/scala
+export PLAY_HOME=$HOME/opt/play-2.2.3
+export PATH="$PATH:$SCALA_HOME/bin:$PLAY_HOME"
+
+# Spark
+export SPARK_HOME=$HOME/opt/spark
+export PATH="$PATH:$SPARK_HOME/bin"
