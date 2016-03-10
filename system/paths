@@ -27,6 +27,7 @@ is_executable() {
 #
 is_executable getconf && PATH=$(command -v getconf PATH)
 
+prepend "$SCALA_HOME/bin"
 prepend "/usr/texbin"
 prepend "/opt/X11/bin"
 prepend "/sbin"
