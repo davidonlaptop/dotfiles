@@ -1,5 +1,16 @@
 # Configuration file for GNU readline, a line editor library
 # used by bash and other apps (gdb, python, bc...)
+#
+
+
+#################################################
+# Readline Variables
+#################################################
+# https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
+#################################################
+
+# Disable the bell ringing sound
+set bell-style none
 
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
@@ -32,12 +43,35 @@ set output-meta on
 set convert-meta off
 
 
+
+
+#################################################
+# Bindable Readline Commands
+#################################################
+# https://www.gnu.org/software/bash/manual/html_node/Bindable-Readline-Commands.html
+#################################################
+#
+# bind -P    # To list your key bindings
+#
+# Categories of readline commands that can be bound to key sequences:
+# * Commands for MOVING about the line
+# * Commands for HISTORY searching
+# * Commands for TEXT for changing text
+# * Commands for KILLING and yanking text
+# 
+# C-k is read as ‘Control-K’
+# M-k is read as ‘Meta-K’
+# M-C-k is read as ‘Meta-Control-k’
+# In addition, several keys have their own names: DEL, ESC, LFD, SPC, RET, and TAB
+
 # Flip through autocompletion matches with Shift-Tab.
 "\e[Z": menu-complete
 
 # Filtered history search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+
+
 
 # References:
 # - https://github.com/webpro/dotfiles/
@@ -47,3 +81,8 @@ set convert-meta off
 #  http://unixhelp.ed.ac.uk/CGI/man-cgi?readline+3
 #  http://en.wikipedia.org/wiki/ANSI_escape_code
 #
+# See also:
+# 
+# http://osxdaily.com/2013/04/24/improve-command-line-history-search/
+# http://unix.stackexchange.com/questions/24132/what-is-the-general-format-of-keyname-for-key-bindings-in-inputrc-file
+# http://superuser.com/questions/19804/mac-book-pro-home-button
