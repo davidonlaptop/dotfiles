@@ -28,7 +28,7 @@ DOTFILES_DIR=$( dirname $(dirname $(dirname $SCRIPT_PATH )))
 
 
 # Bootstrap environment
-for DOTFILE in "$DOTFILES_DIR"/system/{functions,paths,exports,aliases,completions,prompts}
+for DOTFILE in "$DOTFILES_DIR"/etc/bash/system/{functions,paths,exports,aliases,completions,prompts}
 do
     [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
@@ -37,7 +37,7 @@ done
 # Load OS specific configurations
 if [ "$(uname -s)" = "Darwin" ]; then
     OS="OSX"
-    for DOTFILE in "$DOTFILES_DIR"/system/{functions,paths,exports,aliases,completions,prompts}.osx
+    for DOTFILE in "$DOTFILES_DIR"/etc/bash/system/{functions,paths,exports,aliases,completions,prompts}.osx
     do
         [ -f "$DOTFILE" ] && source "$DOTFILE"
     done
@@ -47,7 +47,6 @@ fi
 
 
 #echo -e "`gdate +"%T.%N"` \t Configuring prompt..."
-source "$DOTFILES_DIR/system/liquidpromptrc"
 source "$DOTFILES_DIR/liquidprompt/liquidprompt"
 
 
