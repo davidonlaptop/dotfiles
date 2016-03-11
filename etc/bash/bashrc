@@ -48,7 +48,7 @@ fi
 
 #echo -e "`gdate +"%T.%N"` \t Configuring prompt..."
 source "$DOTFILES_DIR/system/liquidpromptrc"
-source "$DOTFILES_DIR/system/liquidprompt/liquidprompt"
+source "$DOTFILES_DIR/liquidprompt/liquidprompt"
 
 
 # Clean up
