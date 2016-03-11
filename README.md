@@ -26,13 +26,11 @@ These files **are NOT** version controlled in this git repository.
 This is a summary of my personal organization:
 ```bash
 bash-it/                # TODO: clean up
-cron/                   # TODO: clean up
 dotbot/                 # The Dotbot git submodule
 etc/                    # Where most of my dot file
-inputrc                 # TODO: clean up
 install                 # The install script 
 install.yaml            # The install script's config
-system/                 # TODO: clean up
+system/                 # TODO: should be integrated into etc/
 ```
 More details to come later ...
 
