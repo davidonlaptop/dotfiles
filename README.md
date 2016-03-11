@@ -27,10 +27,10 @@ This is a summary of my personal organization:
 ```bash
 bash-it/                # TODO: clean up
 dotbot/                 # The Dotbot git submodule
-etc/                    # Where most of my dot file
+etc/                    # The dot files
 install                 # The install script 
 install.yaml            # The install script's config
-system/                 # TODO: should be integrated into etc/
+liquidprompt/           # A contextual prompt (git,battery status, etc.)
 ```
 More details to come later ...
 
