@@ -1,6 +1,7 @@
 # Private
 /*.key
 /consoles/db/
+/options/gfm.xml
 /options/security.xml
 
 
