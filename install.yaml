@@ -45,6 +45,11 @@
       create: true
       path:   etc/kde/workspaceoptionsrc
     #
+    # OSX SPECIFIC FILES
+    ~/Library/Preferences/IntelliJIdea14:
+      create: true
+      path:   etc/intellij-idea.osx
+    #
     # Interesting extensions:
     #    bash-it/aliases/enabled/ansible.aliases.bash: bash-it/aliases/available/ansible.aliases.bash
     #    bash-it/aliases/enabled/docker.aliases.bash:  bash-it/aliases/available/docker.aliases.bash

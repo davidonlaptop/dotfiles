@@ -1,0 +1,15 @@
+# Private
+/*.key
+/consoles/db/
+/options/security.xml
+
+
+# Workspace-specific (projects, recent files, workspace/java paths, statistics, etc.)
+/componentVersions/*.xml
+/options/feature.usage.statistics.xml
+/options/find.recents.xml
+/options/jdk.table.xml
+/options/options.xml
+/options/recentProjects.xml
+/options/statistics.application.usages.xml
+/tasks/*.zip

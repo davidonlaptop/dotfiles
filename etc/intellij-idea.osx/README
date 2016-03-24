@@ -1,0 +1,6 @@
+
+NOTE: Intellij IDEA (and the other JetBrains IDE) uses different path for each IDE version, and the config is not stored in the same directories for all OS.
+
+https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs
+
+
