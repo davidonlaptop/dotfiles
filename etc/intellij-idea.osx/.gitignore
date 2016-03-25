@@ -15,6 +15,7 @@
 /options/jdk.table.xml
 /options/options.xml
 /options/recentProjects.xml
+/options/runner.layout.xml
 /options/statistics.application.usages.xml
 /options/window.manager.xml
 /tasks/*.zip
