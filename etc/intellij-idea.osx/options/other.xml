@@ -54,6 +54,7 @@
     <option name="MOVE_PREVIEW_USAGES" value="false" />
     <option name="MOVE_INNER_PREVIEW_USAGES" value="false" />
     <option name="EXTRACT_INTERFACE_JAVADOC" value="1" />
+    <option name="EXTRACT_SUPERCLASS_JAVADOC" value="2" />
   </component>
   <component name="SelectProjectTemplateSettings">
     <option name="EXPERT_MODE" value="true" />
