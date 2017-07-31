@@ -81,3 +81,5 @@
 [include]
 	# Allow local customizations (see example in gitconfig_local.sample)
 	path = ~/.gitconfig_local
+[pull]
+	rebase = true
