@@ -24,12 +24,12 @@
 - link:
     #
     # POSIX FILES
-    ~/.bash_profile: etc/bash/bash_profile
-    ~/.bashrc: etc/bash/bashrc
-    ~/.gitconfig: etc/git/gitconfig
-    ~/.gitignore_global: etc/git/gitignore_global
-    ~/.inputrc: etc/inputrc
-    ~/.liquidpromptrc: etc/liquidpromptrc
+    ~/.bash_profile: .bash_profile
+    ~/.bashrc: .bashrc
+    ~/.gitconfig: .gitconfig
+    ~/.gitignore_global: .gitignore_global
+    ~/.inputrc: .inputrc
+    ~/.liquidpromptrc: .liquidpromptrc
     #
     # Interesting extensions:
     #    bash-it/aliases/enabled/ansible.aliases.bash: bash-it/aliases/available/ansible.aliases.bash
