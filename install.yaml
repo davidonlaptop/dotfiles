@@ -26,29 +26,10 @@
     # POSIX FILES
     ~/.bash_profile: etc/bash/bash_profile
     ~/.bashrc: etc/bash/bashrc
-    ~/.bb/final/blogbridge.properties:
-      create: true
-      path:   etc/blogbridge/blogbridge.properties
     ~/.gitconfig: etc/git/gitconfig
     ~/.gitignore_global: etc/git/gitignore_global
     ~/.inputrc: etc/inputrc
     ~/.liquidpromptrc: etc/liquidpromptrc
-    #
-    # LINUX SPECIFIC FILES
-    ~/.config/deluge/core.conf:
-      create: true
-      path:   etc/deluge/core.conf
-    ~/.config/deluge/gtkui.conf:
-      create: true
-      path:   etc/deluge/gtkui.conf
-    ~/.kde/share/config/workspaceoptionsrc:
-      create: true
-      path:   etc/kde/workspaceoptionsrc
-    #
-    # OSX SPECIFIC FILES
-    ~/Library/Preferences/IntelliJIdea14:
-      create: true
-      path:   etc/intellij-idea.osx
     #
     # Interesting extensions:
     #    bash-it/aliases/enabled/ansible.aliases.bash: bash-it/aliases/available/ansible.aliases.bash
