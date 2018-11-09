@@ -23,24 +23,6 @@ fi
 DOTFILES_DIR=$(dirname $(realpath "${BASH_SOURCE[0]}"))
 
 
-# Bootstrap environment
-for DOTFILE in "$DOTFILES_DIR"/etc/bash/system/{functions,paths,exports,aliases,completions,prompts}
-do
-    [ -f "$DOTFILE" ] && source "$DOTFILE"
-done
-
-
-# Load OS specific configurations
-if [ "$(uname -s)" = "Darwin" ]; then
-    OS="OSX"
-    for DOTFILE in "$DOTFILES_DIR"/etc/bash/system/{functions,paths,exports,aliases,completions,prompts}.osx
-    do
-        [ -f "$DOTFILE" ] && source "$DOTFILE"
-    done
-else
-    OS=`uname -s`
-fi
-
 
 ##########################################################
 # Bash settings
@@ -81,6 +63,7 @@ prepend() {
 prepend "$HOME/workspace/ticksmith/internalScripts"
 prepend "$HOME/workspace/ticksmith/devops-tools/bin"
 prepend "/usr/local/opt/python/libexec/bin"
+prepend "/usr/local/opt/coreutils/libexec/gnubin"
 prepend "$HOME/bin"
 
 # Remove duplicates (preserving prepended items)
@@ -96,10 +79,21 @@ alias l="ls -F"       # Compact view
 alias la="ls -AF"     # Compact view, show hidden
 alias ll='ls -al'     # Long format, show hidden
 alias ld="ls -ld */"  # Long format, show only directories
+#alias ls='$HOME/Local/homebrew/bin/gls --color -h --group-directories-first'
+alias lt='tree -C --dirsfirst'
+alias lt1='tree -C --dirsfirst -L 1'
+alias lt2='tree -C --dirsfirst -L 2'
+alias lt3='tree -C --dirsfirst -L 3'
+alias lt4='tree -C --dirsfirst -L 4'
 
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+alias mkdir='mkdir -p'
+
+alias cat=`which vimcat`
+alias less=`which vimpager`` 
 
 
 #echo -e "`gdate +"%T.%N"` \t Configuring prompt... DOTFILES_DIR=$DOTFILES_DIR"
