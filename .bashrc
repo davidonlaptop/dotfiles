@@ -75,11 +75,11 @@ export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++
 ##########################################################
 # Aliases
 ##########################################################
+alias ls='ls --color -h --group-directories-first'
 alias l="ls -F"       # Compact view
 alias la="ls -AF"     # Compact view, show hidden
 alias ll='ls -al'     # Long format, show hidden
 alias ld="ls -ld */"  # Long format, show only directories
-#alias ls='$HOME/Local/homebrew/bin/gls --color -h --group-directories-first'
 alias lt='tree -C --dirsfirst'
 alias lt1='tree -C --dirsfirst -L 1'
 alias lt2='tree -C --dirsfirst -L 2'
@@ -93,7 +93,7 @@ alias ....="cd ../../.."
 alias mkdir='mkdir -p'
 
 alias cat=`which vimcat`
-alias less=`which vimpager`` 
+alias less=`which vimpager` 
 
 
 #echo -e "`gdate +"%T.%N"` \t Configuring prompt... DOTFILES_DIR=$DOTFILES_DIR"
