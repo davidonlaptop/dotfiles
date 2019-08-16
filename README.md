@@ -6,6 +6,11 @@ Repository for my `$HOME` directory's config files :-)
 After cloning this repo, run `./install` to automatically set up the development environment.
 Note that the install script is idempotent: it can safely be run multiple times.
 
+For OSX, also run:
+```
+brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+```
+
 ### Dependencies
 This repo uses [Dotbot][dotbot] to bootstrap installation, which is installed automatically as a git submodule when this repo is cloned.
 

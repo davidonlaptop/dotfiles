@@ -62,8 +62,8 @@ prepend() {
 
 prepend "$HOME/workspace/ticksmith/internalScripts"
 prepend "$HOME/workspace/ticksmith/devops-tools/bin"
-prepend "/usr/local/opt/python/libexec/bin"
 prepend "/usr/local/opt/coreutils/libexec/gnubin"
+prepend "/usr/local/opt/python/libexec/bin"
 prepend "$HOME/bin"
 
 # Remove duplicates (preserving prepended items)
