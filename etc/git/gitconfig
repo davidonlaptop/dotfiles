@@ -58,6 +58,7 @@
 	excludesfile = ~/.gitignore_global  # User-wide .gitignore
 
 [credential]
+	helper = lastpass		# Store credentials with lastpass-cli
 	helper = cache --timeout=1800   # Cache credentials in RAM for 30 minutes
 
 [grep]
@@ -83,3 +84,5 @@
 	path = ~/.gitconfig_local
 [pull]
 	rebase = true
+[rerere]
+	enabled = true
