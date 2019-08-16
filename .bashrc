@@ -100,6 +100,13 @@ alias less=`which vimpager`
 source "$DOTFILES_DIR/liquidprompt/liquidprompt"
 
 
+##########################################################
+# Miscellaneous
+##########################################################
+# Add default private key to ssh agent (enable ssh loop to this machine)
+ssh-add -K 2> /dev/null
+
+
 # Clean up
 unset SCRIPT_PATH DOTFILES_DIR DOTFILE OS
 unset prepend append
