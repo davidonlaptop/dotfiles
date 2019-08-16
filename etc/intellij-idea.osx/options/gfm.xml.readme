@@ -1,9 +1,0 @@
-To generate a GitHub OAuth token for the GFM (GitHub Flavored Markdown) IDEA Plugin, follow these steps:
-
-1. Go to GitHub > Personal Settings > Personal Access Tokens : https://github.com/settings/tokens
-
-2. Check Generate new token
-
-3. Select the 'public_repo' scope
-
-4. Go to IntelliJ IDEA > Preferences > Other settings > Gfm settings, and enter the token.
